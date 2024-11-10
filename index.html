@@ -1,1 +1,47 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit-no">
+    <meta name="author" content="David Talmadge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>Contacts</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="boxStart">
+        <p id="start"></p>
+      </div>
+      <div class="boxEnd">
+        <p><a href="index.html">Back to the Main Page</a>  <span style="float:right;">This page created as academic activity only.</span></p>
+      </div>
+    </div>
+    <script>
+      var count = 0;
+      var randomNumber = Math.floor(Math.random() * 10) +1;
+      document.getElementById("start").innerHTML = randomNumber;
+      console.log(randomNumber);
+      let guess = prompt('Guess a number between 1 and 10.');
+      loop1(parseInt(guess));
+      alert('Reload page to play again. Goodbye.');
+      
+      function loop1(prompt){
+        count++;
+        if(prompt===randomNumber){
+          alert(`You guessed it in ${count} guesses.`);
+        }else{
+          if(prompt<randomNumber){
+            let p = prompt(`Guess was too low, guess again.`);
+            loop1(parseInt(p));
+          }
+          if(prompt>randomNumber){
+            let p = prompt(`Guess was too high, guess again.`);
+            loop1(parseInt(p));
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
