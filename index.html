@@ -27,16 +27,16 @@
       loop1(parseInt(guess));
       alert('Reload page to play again. Goodbye.');
       
-      function loop1(prompt){
+      function loop1(g){
         count++;
-        if(prompt===randomNumber){
+        if(g===randomNumber){
           alert(`You guessed it in ${count} guesses.`);
         }else{
-          if(prompt<randomNumber){
+          if(g<randomNumber){
             let p = prompt(`Guess was too low, guess again.`);
             loop1(parseInt(p));
           }
-          if(prompt>randomNumber){
+          if(g>randomNumber){
             let p = prompt(`Guess was too high, guess again.`);
             loop1(parseInt(p));
           }
