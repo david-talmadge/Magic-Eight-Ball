@@ -19,28 +19,38 @@
       </div>
     </div>
     <script>
-      var count = 0;
-      var randomNumber = Math.floor(Math.random() * 10) +1;
-      document.getElementById("start").innerHTML = randomNumber;
-      console.log(randomNumber);
-      let guess = prompt('Guess a number between 1 and 10.');
-      loop1(parseInt(guess));
+      var name = prompt('Please enter your name. ');
+      var input = prompt('Even or Odd? ');
+      var wins = 0;
+      var losses = 0;
+      document.getElementById("start").innerHTML = name;
+      console.log(name);
+      loop1();
       alert('Reload page to play again. Goodbye.');
       
-      function loop1(g){
-        count++;
-        if(g===randomNumber){
-          alert(`You guessed it in ${count} guesses.`);
-        }else{
-          if(g<randomNumber){
-            let p = prompt(`Guess was too low, guess again.`);
-            loop1(parseInt(p));
+      function loop1(){
+        alert(`3.. 2.. 1.. `);
+          let num1 = Math.floor(Math.random() * 4)+1;
+        console.log(num1);
+          let num2 = Math.floor(Math.random() * 4) +1;
+        console.log(num2);
+          let sum = num1 + num2;
+          let output = '';
+          if(sum/2===Math.floor(sum/2)){
+            output = 'even';
+          }else{
+            output = 'odd';
           }
-          if(g>randomNumber){
-            let p = prompt(`Guess was too high, guess again.`);
-            loop1(parseInt(p));
+          if(input===output){
+             alert(`${name}, you chose ${input}, the sum was ${sum}, which is an ${output} number, you win!`);
+            wins++;
+          }else{
+             alert(`${name}, you chose ${input}, the sum was ${sum}, which is an ${output} number, you lose!`);
+            losses++;
           }
-        }
+        alert(`That's ${wins} wins and ${losses} losses!`);
+        let shouldLoop = prompt('Would you like to play again y/n? ');
+        if(shouldLoop==='y') loop1();
       }
     </script>
   </body>
