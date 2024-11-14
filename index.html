@@ -20,7 +20,6 @@
     </div>
     <script>
       var name = prompt('Please enter your name. ');
-      var input = prompt('Even or Odd? ');
       var wins = 0;
       var losses = 0;
       document.getElementById("start").innerHTML = name;
@@ -29,11 +28,12 @@
       alert('Reload page to play again. Goodbye.');
       
       function loop1(){
+        let input = prompt('Even or Odd? ');
         alert(`3.. 2.. 1.. `);
           let num1 = Math.floor(Math.random() * 4)+1;
-        console.log(num1);
+          console.log(num1);
           let num2 = Math.floor(Math.random() * 4) +1;
-        console.log(num2);
+          console.log(num2);
           let sum = num1 + num2;
           let output = '';
           if(sum/2===Math.floor(sum/2)){
