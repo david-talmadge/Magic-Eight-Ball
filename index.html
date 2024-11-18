@@ -22,8 +22,6 @@
       var name = prompt('Please enter your name. ');
       var wins = 0;
       var losses = 0;
-      document.getElementById("start").innerHTML = name;
-      console.log(name);
       loop1();
       alert('Reload page to play again. Goodbye.');
       
@@ -56,10 +54,11 @@
         if(shouldLoop==='y') loop1();
       }
       function loop2(g, a, b){
-        if(g!=a&&g!=b){    
-           let check = prompt(`Invalid input, expected: `+a+`/`+b+`.`);
-           if(check!=a&&check!=b) loop2(g,a,b);
-        }
+        let check = prompt(`Invalid input, expected: `+a+`/`+b+`.`);
+        if(check!=a&&check!=b){
+          return loop2(g,a,b);
+        }else{
+          return check;
       }
     </script>
   </body>
