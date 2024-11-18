@@ -29,7 +29,9 @@
       
       function loop1(){
         let input = prompt('Even or Odd? ');
-        loop2(input);
+        if(input!='even'&&input!='odd'){
+           input = loop2(input, `even`, `odd`);
+        }
         alert(`3.. 2.. 1.. `);
           let num1 = Math.floor(Math.random() * 4)+1;
           console.log(num1);
@@ -53,10 +55,10 @@
         let shouldLoop = prompt('Would you like to play again y/n? ');
         if(shouldLoop==='y') loop1();
       }
-      function loop2(g){
-        if(g!='even' && g!='odd'){    
-           alert(`Invalid input, enter even or odd.`);
-           loop2(input);
+      function loop2(g, a, b){
+        if(g!=a && g!=b){    
+           prompt(`Invalid input, expected: `+a+`/`+b+`.`);
+           loop2(g,a,b);
         }
       }
     </script>
