@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <title>Guessing Game</title>
+    <title>Commission</title>
   </head>
   <body>
     <div class="wrapper">
@@ -20,48 +20,33 @@
     </div>
     <script>
       var name = prompt('Please enter your name. ');
-      var wins = 0;
-      var losses = 0;
+      var sum=0, comRate=0, comVal=0;
       console.log(name);
       loop1();
+      func1();
       alert('Reload page to play again. Goodbye.');
       
       function loop1(){
-        let input = prompt('Even or Odd? ');
-        if(input!='even'&&input!='odd'){
-           input = loop2(input, 'even', 'odd');
-        }
-        console.log(input);
-        alert(`3.. 2.. 1.. `);
-          let num1 = Math.floor(Math.random() * 4)+1;
-          console.log(num1);
-          let num2 = Math.floor(Math.random() * 4) +1;
-          console.log(num2);
-          let sum = num1 + num2;
-          let output = '';
-          if(sum/2===Math.floor(sum/2)){
-            output = 'even';
-          }else{
-            output = 'odd';
-          }
-          if(input===output){
-             alert(`${name}, you chose ${input}, the sum was ${sum}, which is an ${output} number, you win!`);
-            wins++;
-          }else{
-             alert(`${name}, you chose ${input}, the sum was ${sum}, which is an ${output} number, you lose!`);
-            losses++;
-          }
-        alert(`That's ${wins} wins and ${losses} losses!`);
-        let shouldLoop = prompt('Would you like to play again y/n? ');
-        if(shouldLoop==='y') loop1();
-      }
-      function loop2(g, a, b){
-        let check = prompt(`Invalid input, expected: `+a+`/`+b+`.`);
-        if(check!=a&&check!=b){
-          return loop2(g,a,b);
+        let input = prompt(`Hi ${name}, Please enter the dollar amount of your sales a single sale at a time. Enter Done when you are finished.`);
+        if(input==='Done'||input==='done'){
+        }else if(!isNaN(input)){
+          sum+=parseInt(input);
+          loop1();
         }else{
-          return check;
+          loop1();
         }
+      }
+      function func1(){
+        if(sum<=0){
+          comRate=0.00;
+        }else if(sum=>0.01&&sum<500){
+          comRate=0.05;
+        }else if(sum=>499.99&&sum<1000){
+          comRate=0.10;
+        }else if(sum=>1000){
+          comRate=0.15;
+        }
+        
       }
     </script>
   </body>
