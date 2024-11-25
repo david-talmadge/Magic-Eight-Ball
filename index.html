@@ -52,9 +52,10 @@
         }else if(sum=>1000){
           comRate=15.00;
         }
-        document.getElementById("start").innerHTML = "Hello" + name + ", Here is your Weekly Commission Report.";
-        document.getElementById("b1").innerHTML = "Your sales total is $"+ sum + ", so your commission rate is " + comRate + "%";
-        document.getElementById("b2").innerHTML = "Your total commission is $" + (sum*comRate).toFixed(2);
+        document.getElementById("start").innerHTML = "Hello " + name + ", Here is your Weekly Commission Report.";
+        document.getElementById("b1").innerHTML = "Your sales total is $"+ sum.toFixed(2) + ", so your commission rate is " + comRate.toFixed(2) + "%";
+        document.getElementById("b2").innerHTML = "Your total commission is $" + (sum*(comRate/100)).toFixed(2)+".";
+        document.getElementById("b3").innerHTML = "Your total earnings are $" + (sum+(sum*(comRate/100))).toFixed(2);
       }
     </script>
   </body>
