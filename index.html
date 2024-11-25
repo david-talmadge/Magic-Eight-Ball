@@ -14,6 +14,12 @@
       <div class="boxStart">
         <p id="start"></p>
       </div>
+      <div class="box1">
+        <p id="b1"></p>
+      </div>
+      <div class="box2">
+        <p id="b2"></p>
+      </div>
       <div class="boxEnd">
         <p><a href="index.html">Back to the Main Page</a>  <span style="float:right;">This page created as academic activity only.</span></p>
       </div>
@@ -40,13 +46,15 @@
         if(sum<=0){
           comRate=0.00;
         }else if(sum=>0.01&&sum<500){
-          comRate=0.05;
+          comRate=5.00;
         }else if(sum=>499.99&&sum<1000){
-          comRate=0.10;
+          comRate=10.00;
         }else if(sum=>1000){
-          comRate=0.15;
+          comRate=15.00;
         }
-        
+        document.getElementById("start").innerHTML = "Hello" + name + ", Here is your Weekly Commission Report.";
+        document.getElementById("b1").innerHTML = "Your sales total is $"+ sum + ", so your commission rate is " + comRate + "%";
+        document.getElementById("b2").innerHTML = "Your total commission is $" + (sum*comRate).toFixed(2);
       }
     </script>
   </body>
