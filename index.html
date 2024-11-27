@@ -10,14 +10,6 @@
     <title>Commission</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="boxStart">
-        <p id="start"></p>
-      </div>
-      <div class="boxEnd">
-        <p><a href="index.html">Back to the Main Page</a>  <span style="float:right;">This page created as academic activity only.</span></p>
-      </div>
-    </div>
     <script>
       var name = prompt('Please enter your name. ');
       var sum=0, comRate=0, comVal=0;
@@ -51,7 +43,6 @@
         let commission = "Your total commission is $" + (sum*(comRate/100)).toFixed(2)+".";
         let earnings = "Your total earnings are $" + (sum+(sum*(comRate/100))).toFixed(2);
         document.write(`<h2>${header}</h2><p>${sales}<br>${commission}<br>${earnings}</p>`);
-        
       }
     </script>
   </body>
