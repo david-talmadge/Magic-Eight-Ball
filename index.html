@@ -48,11 +48,11 @@
       function func1(){
         if(sum<=0){
           comRate=0.00;
-        }else if(sum=>0.01&&sum<500){
+        }else if(sum>=0.01&&sum<500){
           comRate=5.00;
-        }else if(sum=>499.99&&sum<1000){
+        }else if(sum>=499.99&&sum<1000){
           comRate=10.00;
-        }else if(sum=>1000){
+        }else if(sum>=1000){
           comRate=15.00;
         }
         document.getElementById("start").innerHTML = "Hello " + name + ", Here is your Weekly Commission Report.";
