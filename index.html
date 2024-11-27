@@ -50,7 +50,7 @@
         let sales = "Your sales total is $"+ sum.toFixed(2) + ", so your commission rate is " + comRate.toFixed(2) + "%";
         let commission = "Your total commission is $" + (sum*(comRate/100)).toFixed(2)+".";
         let earnings = "Your total earnings are $" + (sum+(sum*(comRate/100))).toFixed(2);
-        document.write("<h2>${header}</h2><p>${sales}<br>${commission}<br>${earnings}</p>");
+        document.write(`<h2>${header}</h2><p>${sales}<br>${commission}<br>${earnings}</p>`);
         
       }
     </script>
